@@ -1,12 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import tw from 'twrnc';
+
+import PageLanding from './src/pages/Landing';
+import PageMain from './src/pages/Main';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={tw`flex-1 bg-green text-white items-center justify-center`}>
-      <Text>Opens up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Landing" component={PageLanding} />
+        <Stack.Screen name="Main" component={PageMain} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
