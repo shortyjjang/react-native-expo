@@ -12,7 +12,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Landing" 
         options={
-          {headerShown: false}
+          {headerShown: false} //헤더 노출 옵션 설정
         }
         component={PageLanding} />
         <Stack.Screen name="Main" component={PageMain} />
